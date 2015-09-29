@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+$color-brand-accent:black;
+$color-brand:blue;
+$breakpoint-mid:700px;
+$font: 'Open Sans', sans-serif;
+
+body {
+  text-align: center;
+}
+.wrapper {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 50px auto 0 auto;
+  width: 80%;
+}
+
+.search-input {
+  float: left;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  z-index: 3;
+  @media (max-width: $breakpoint-mid) {
+    margin-right: 0px;
+    max-width: 100%;
+  }
+  input, &__ghost, &__caret-container {
+    font-family: $font;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+  input, &__caret-container  {
+    border: 0px;
+    padding: 0px;
+    background: transparent;
+    height: 20px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 0px;
+    position: relative;
+    color: transparent; // In order to make input caret transparent
+    text-shadow: 0 0 0 $color-brand-accent; // In order to make text appear again
+  }
+  &__caret-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity:0;
+    -webkit-opacity:0;
+  }
+  &__ghost {
+    display: inline-block;
+  }
+  &__caret {
+    width: 2px;
+    height: 36px;
+    background: $color-brand-accent;
+    position: absolute;
+    left: 0px;
+    top: -8px;
+  }
+}
